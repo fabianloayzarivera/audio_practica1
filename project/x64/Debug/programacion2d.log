@@ -1,0 +1,44 @@
+﻿  world.cpp
+  Vec2.cpp
+c:\users\fabian.loayza\documents\git\2d_practica6\src\vec2.cpp(87): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\vec2.cpp(89): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\vec2.cpp(91): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\vec2.cpp(93): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  sprite.cpp
+c:\users\fabian.loayza\documents\git\2d_practica6\src\sprite.cpp(59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\sprite.cpp(69): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\sprite.cpp(74): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  main.cpp
+c:\program files (x86)\windows kits\10\include\10.0.15063.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  c:\users\fabian.loayza\documents\git\2d_practica6\lib\glfw3.h(98): note: see previous definition of 'APIENTRY'
+c:\users\fabian.loayza\documents\git\2d_practica6\lib\litegfx.h(372): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\main.cpp(62): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\fabian.loayza\documents\git\2d_practica6\src\main.cpp(67): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\fabian.loayza\documents\git\2d_practica6\src\main.cpp(72): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\fabian.loayza\documents\git\2d_practica6\src\main.cpp(98): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\main.cpp(77): warning C4101: 'beeFrame': unreferenced local variable
+c:\users\fabian.loayza\documents\git\2d_practica6\src\main.cpp(181): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  font.cpp
+c:\users\fabian.loayza\documents\git\2d_practica6\src\font.cpp(25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\font.cpp(37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\font.cpp(43): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\fabian.loayza\documents\git\2d_practica6\src\font.cpp(44): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+c:\users\fabian.loayza\documents\git\2d_practica6\src\vec2.cpp(72): warning C4715: 'Vec2::norm': not all control paths return a value
+c:\users\fabian.loayza\documents\git\2d_practica6\src\world.cpp(119): warning C4715: 'World::getBackground': not all control paths return a value
+c:\users\fabian.loayza\documents\git\2d_practica6\src\world.cpp(159): warning C4715: 'World::getScrollRatio': not all control paths return a value
+c:\users\fabian.loayza\documents\git\2d_practica6\src\world.cpp(199): warning C4715: 'World::getScrollSpeed': not all control paths return a value
+main.obj : error LNK2019: unresolved external symbol glfwInit referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwTerminate referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwWindowHint referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwCreateWindow referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwWindowShouldClose referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetWindowSize referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwPollEvents referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetKey referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetCursorPos referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetTime referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function main
+../lib\glfw3.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\fabian.loayza\Documents\git\2d_practica6\project\x64\Debug\programacion2d.exe : fatal error LNK1120: 12 unresolved externals
