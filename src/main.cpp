@@ -12,6 +12,7 @@
 #include <list>
 #include <litegfx.h>
 #include <audio_buffer.h>
+#include <audio_source.h>
 //#include <world.h>
 using namespace std;
 
@@ -38,18 +39,36 @@ int main() {
 	int screenWidth, screenHeight;
 	Vec2 screenSize(800, 600);
 
-	//alcMakeContextCurrent(alcCreateContext(alcOpenDevice(nullptr), nullptr));
+	ALCdevice *device = alcOpenDevice(nullptr);
+	ALCcontext *context = alcCreateContext(device, nullptr);
+	alcMakeContextCurrent(context);
+
 	double lastTime = glfwGetTime();
-	const char* filename = "./data/music.wav";
-	AudioBuffer::load(filename);
+	const char* filename = "./data/music2.wav";
+	AudioBuffer* audioBuffer = AudioBuffer::load(filename);
+	if (!audioBuffer) {
+		//BUFFER NOT CREATED CORRECTLY
+	}
+	AudioSource audioSource(audioBuffer);
+	audioSource.play();
+	
 
 	while (!glfwWindowShouldClose(window) && !glfwGetKey(window, GLFW_KEY_ESCAPE)) {
 		// Actualizamos delta
 		float deltaTime = static_cast<float>(glfwGetTime() - lastTime);
 		lastTime = glfwGetTime();
 
+		if (glfwGetKey(window, GLFW_KEY_UP))			
+			audioSource.addPitch(0.0001f);
 
+		if (glfwGetKey(window, GLFW_KEY_DOWN))
+			audioSource.addPitch(-0.0001f);
 
+		if (glfwGetKey(window, GLFW_KEY_LEFT))
+			audioSource.movePositionX(-0.001f);
+
+		if (glfwGetKey(window, GLFW_KEY_RIGHT))
+			audioSource.movePositionX(0.001f);
 
 
 
@@ -63,6 +82,9 @@ int main() {
 
 
 	}
+
+	alcDestroyContext(context);
+	alcCloseDevice(device);
 
 	return 0;
 }

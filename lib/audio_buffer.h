@@ -5,10 +5,10 @@
 #include <vector>
 class AudioBuffer {
 private:
-	AudioBuffer() { bufferId = nullptr; }
-	ALuint* bufferId;
+	AudioBuffer() { }
+	uint32_t bufferId;
 public:
 	static AudioBuffer*	load(const char* filename);
-	uint32_t			getAlBuffer() const {}
-	~AudioBuffer() {}
+	uint32_t			getAlBuffer() const { return bufferId; }
+	~AudioBuffer();
 };
