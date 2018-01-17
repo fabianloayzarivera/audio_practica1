@@ -42,6 +42,7 @@ int main() {
 	double lastTime = glfwGetTime();
 	const char* filename = "./data/music.wav";
 	AudioBuffer::load(filename);
+
 	while (!glfwWindowShouldClose(window) && !glfwGetKey(window, GLFW_KEY_ESCAPE)) {
 		// Actualizamos delta
 		float deltaTime = static_cast<float>(glfwGetTime() - lastTime);
