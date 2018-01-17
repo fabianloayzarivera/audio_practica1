@@ -17,6 +17,7 @@ AudioBuffer*  AudioBuffer::load(const char* filename) {
 		/*std::vector<unsigned char> my_buffer(sizeBuffer);*/
 		fseek(ptr, 0, SEEK_SET);
 		long fmtChunkSize;
+		long byteRate;
 		long dataSize;
 		short extraParamSize;
 		size_t bufferSize = 4;
@@ -60,8 +61,11 @@ AudioBuffer*  AudioBuffer::load(const char* filename) {
 			//printf("%s", charBuffer.data());
 			dataBuffer.resize(dataSize);
 			fread_s(dataBuffer.data(), dataSize, 1, dataSize, ptr);
-			printf("%s", dataBuffer.data());
-		
+			printf("%s\n", dataBuffer.data());
+			fseek(ptr, currentChar, SEEK_SET);
+			fread_s(&byteRate, sizeof(long), 1, sizeof(long), ptr);
+			std::cout << "ByteRate: " << byteRate;
+
 		}
 		else {
 			//INVALID FILE!!!
@@ -69,7 +73,9 @@ AudioBuffer*  AudioBuffer::load(const char* filename) {
 
 		}	
 	
-			
+		fseek(ptr, currentChar, SEEK_SET);
+		fread_s(&fmtChunkSize, sizeof(long), 1, sizeof(long), ptr);
+
 
 		/*fread_s(&fmtChunkSize, sizeof(long), 1, sizeof(long), ptr);
 		
